@@ -1,10 +1,24 @@
 {
   "name": "carlet",
-  "module": "index.ts",
+  "module": "src/index.ts",
   "type": "module",
   "private": true,
+  "scripts": {
+    "dev": "bun run src/index.ts",
+    "migrate": "bun run src/db/migrate.ts",
+    "seed": "bun run src/db/seed.ts",
+    "test": "bun test",
+    "test:watch": "bun test --watch"
+  },
+  "dependencies": {
+    "hono": "^4.0.0",
+    "drizzle-orm": "^0.29.0",
+    "postgres": "^3.4.0"
+  },
   "devDependencies": {
-    "@types/bun": "latest"
+    "@types/bun": "latest",
+    "@types/node": "^20.0.0",
+    "drizzle-kit": "^0.20.0"
   },
   "peerDependencies": {
     "typescript": "^5"
