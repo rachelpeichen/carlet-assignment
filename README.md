@@ -30,7 +30,7 @@ This approach is more reliable than application-level locking because:
 
 ### Prerequisites
 
-- **Bun** v1.3.5 or later ([Install Bun](https://bun.sh))
+- **Bun** v1.3.5 or later
 - **PostgreSQL** database (local or managed service like Neon/Supabase)
 
 ### Step 1: Install Dependencies
@@ -244,17 +244,3 @@ One should succeed with a `booking_id`, the other should return `{"error": "Slot
 - `bun run seed` - Seed the database with test users
 - `bun test` - Run unit tests
 - `bun test:watch` - Run unit tests in watch mode
-
-### Generating New Migrations
-
-If you modify the schema, generate a new migration:
-
-```bash
-bunx drizzle-kit generate
-```
-
-Then run the migration:
-
-```bash
-bun run migrate
-```
